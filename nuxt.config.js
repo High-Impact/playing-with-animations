@@ -1,6 +1,7 @@
 export default {
   components: true,
   mode: 'spa',
+
   /*
    ** Headers of the page
    */
@@ -28,7 +29,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    '~/plugins/animateOnScroll.client.js',
+    '~/plugins/paralax.client.js'
+  ],
   /*
    ** Nuxt.js modules
    */

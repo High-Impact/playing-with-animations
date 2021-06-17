@@ -7,4 +7,13 @@
     <nuxt />
   </main>
 </template>
+<style lang="scss">
+* {
+  font-family: $roboto;
+}
+
+main {
+  margin-top:$header-height;
+}
+</style>
 

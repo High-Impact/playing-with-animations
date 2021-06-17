@@ -1,5 +1,7 @@
 <template>
+  <section class="noise-container">
     <section class="background-noise" :style="`background-image:url('data:image/svg+xml,${noise[count]}')`" />
+  </section>
 </template>
 <script>
 export default {
@@ -60,9 +62,7 @@ export default {
   beforeMount() {
     this.pixels = this.generatePixels();
     for (let index = 0; index < this.svgs; index++) {
-      console.log(index)
       this.noise.push(this.generateNoiseSVG())
-      console.log(this.noise)
     }
     this.updateNoise = setInterval(this.interval, 100);
     this.loading = false;
@@ -73,16 +73,26 @@ export default {
 }
 </script>
 <style lang="scss">
+  .noise-container {
+    background-image:url('/paper-sm.jpg');
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    position: fixed;
+    opacity: .2;
+    top:0;
+
     .background-noise {
       position:fixed;
-      z-index: -1;
+      z-index: 0;
       height:100vh;
       width:100vw;
       top:0;
       left:0;
       background-repeat:repeat;
       background-size: 100px;
-      opacity: .025;
+      opacity: .25;
       filter: blur(1px);
     }
+  }
 </style>

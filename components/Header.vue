@@ -1,6 +1,8 @@
 <template>
     <header class="container">
-        <img src="/logo.png" alt="RABS logo">
+        <nuxt-link to="/">
+            <img src="/logo.png" alt="RABS logo">
+        </nuxt-link>
         <section class="navigation-container">
             <Button>Request a demo</Button>
             <button @click="menu = !menu" class="hamburger hamburger--collapse" :class="{'is-active':menu}" type="button">
@@ -22,8 +24,17 @@ export default {
 </script>
 <style lang="scss">
     header {
+        height:$header-height;
+        position:fixed;
+        top:0;
         display:flex;
         justify-content: space-between;
         align-items: center;
+        left:50%;
+        transform: translateX(-50%);
+        .navigation-container {
+            display:flex;
+            align-items:center ;
+        }
     }
 </style>
