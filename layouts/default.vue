@@ -1,19 +1,45 @@
 <template>
-  <main>
-    <section class="bg-noise">
-      <Noise/>
+  <main id="root-app">
+    <section>
+      <section class="bg-noise">
+        <Noise/>
+      </section>
+      <Header />
+      <section asscroll-container>
+        <section>
+          <nuxt />
+        </section>
+      </section>
+      <floating-mouse/>
     </section>
-    <Header />
-    <nuxt />
   </main>
 </template>
+<script>
+
+export default {
+  methods: {
+    smoothScroll() {
+      console.log('hello');
+    }
+  },
+  beforeMount() {
+    },
+  mounted() {
+    document.addEventListener("scroll", this.smoothScroll)
+  },
+  beforeDestroy() {
+    document.removeEventListener("scroll", this.smoothScroll)
+  }
+}
+</script>
+
 <style lang="scss">
-* {
-  font-family: $roboto;
-}
-
-main {
-  margin-top:$header-height;
-}
+  // #root-app {
+  //   position: fixed; 
+  //   top: 0px; 
+  //   left: 0px; 
+  //   width: 100%; 
+  //   height: 100%; 
+  //   contain: content;
+  // }
 </style>
-

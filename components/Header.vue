@@ -1,5 +1,5 @@
 <template>
-    <header class="container">
+    <header class="container" >
         <nuxt-link to="/">
             <img src="/logo.png" alt="RABS logo">
         </nuxt-link>
@@ -32,9 +32,20 @@ export default {
         align-items: center;
         left:50%;
         transform: translateX(-50%);
+     
+        a {
+            margin:0;
+        }
+     
         .navigation-container {
             display:flex;
-            align-items:center ;
+            align-items:center;
+
+            .hamburger {
+                height:24px;
+                padding: 0;
+                margin-left:2em;
+            }
         }
     }
 </style>

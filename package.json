@@ -10,6 +10,7 @@
     "start": "nuxt start"
   },
   "dependencies": {
+    "@ashthornton/asscroll": "^2.0.1",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {

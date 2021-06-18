@@ -1,26 +1,23 @@
 import Vue from 'vue'
-
+const options = {
+    threshold: .25,
+}
 const animateOnScrollObserver = new IntersectionObserver(
   (entries, animateOnScrollObserver) => {
     entries.forEach(entry => {
-        console.log(entry)
-        console.log(window.scrollY)
-    //   if (entry.isIntersecting) {
-    //     entry.target.classList.add('enter')
-    //     entry.target.classList.remove('before-enter')
-    //     // animateOnScrollObserver.unobserve(entry.target)
-    // } else {
-    //     entry.target.classList.add('up')
-    //     entry.target.classList.remove('enter')
-
-    //   }
+        if(entry.isIntersecting) {
+            entry.target.classList.add('enter')
+            entry.target.classList.remove('before-enter')
+        }
     })
-  }
-)
+  },options)
 
 Vue.directive('AOS', {
-  bind: el => {
-    el.classList.add('AOS', 'down')
+  bind: (el, classes) => {
+    el.classList.add('AOS', 'before-enter')
     animateOnScrollObserver.observe(el)
+  },
+  unbind: (el) => {
+      animateOnScrollObserver.unobserve(el)
   }
 })

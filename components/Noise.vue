@@ -91,6 +91,7 @@ export default {
       left:0;
       background-repeat:repeat;
       background-size: 100px;
+      // background-size: 100vw;
       opacity: .25;
       filter: blur(1px);
     }

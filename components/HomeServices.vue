@@ -19,3 +19,9 @@
         </section>
     </section>
 </template>
+<style lang="scss">
+    .home-services {
+        position: relative;
+        z-index: 1;
+    }
+</style>

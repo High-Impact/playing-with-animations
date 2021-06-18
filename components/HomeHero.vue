@@ -9,9 +9,11 @@
                     SAFE
                 </h1>
                 <p>Serving studio production for over three years. RABS is trusted by Assistant Directors, Accounting, Casting, and Other Crew to safely and efficiently manage background and production’s needs. </p>
-                <Button>REQUEST A DEMO</Button>
+                <nuxt-link to="/test">
+                    <Button>REQUEST A DEMO</Button>
+                </nuxt-link>
             </section>
-            <img v-paralax src="/rect-placeholder.png" alt="placeholder">
+            <img v-paralax="'slow'" src="/rect-placeholder.png" alt="placeholder">
         </section>
         <Marquee
             class="marquee"
@@ -24,14 +26,19 @@
 </template>
 <style lang="scss">
 .home-hero {
+    position: relative;
+    // z-index: 2;
     .content-container {
         position:relative;
         max-width:75ch;
         margin-bottom: 20em;
         padding-top:5em;
+        // z-index: 1;
         
         .content {
-            z-index: 2;
+            h1 {
+                z-index: 2;
+            }
             h1 {
                 font-size:8em;
                 line-height:1;
@@ -56,6 +63,7 @@
             left: 100%;
             width:calc(1200px - 75ch);
             top:50%;
+            z-index: 1;
         }
     }
     .marquee {
@@ -68,6 +76,7 @@
         margin-top:-15em;
         padding: 1em 0;
         color: white;
+        overflow: hidden;
     }
 }
 </style>

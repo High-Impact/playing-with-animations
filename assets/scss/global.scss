@@ -1,3 +1,11 @@
+main {
+	padding-top: $header-height;
+}
+
+* {
+	font-family: $roboto;
+}
+
 button {
 	border-radius: 2em;
 	border: 0;
@@ -6,15 +14,13 @@ button {
 	padding: 1em 2em;
 	font-weight: 900;
 	letter-spacing: 0.1em;
+	position: relative;
+	z-index: 2;
 }
-.AOS {
-	transition: all 1.3s ease;
-}
-.before-enter {
-	opacity: 0;
-	transform: scale(1.05);
-}
-.enter {
-	opacity: 1;
-	transform: scale(1);
+
+// Forcing mouse action
+button,
+a {
+	position: relative;
+	z-index: 2;
 }

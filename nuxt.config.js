@@ -25,7 +25,6 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
   /*
    ** Plugins to load before mounting the App
    */
@@ -39,8 +38,11 @@ export default {
   modules: [
     '@nuxtjs/style-resources'
   ],
+  css: [
+    '@/assets/scss/main.scss'
+],
   styleResources: {
-    scss: ['./assets/scss/main.scss']
+    scss: ['./assets/scss/variables.scss']
   },
   /*
    ** Build configuration
@@ -49,6 +51,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    transpile: ['@ashthornton/asscroll'],
     extend(config, ctx) {},
   },
 };
