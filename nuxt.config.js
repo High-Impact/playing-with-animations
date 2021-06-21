@@ -1,6 +1,7 @@
 export default {
   components: true,
   mode: 'spa',
+  // ssr: true,
 
   /*
    ** Headers of the page

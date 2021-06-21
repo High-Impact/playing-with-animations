@@ -1,20 +1,21 @@
 import Vue from 'vue'
 
+
 function paralax(event) {
   let items = document.querySelectorAll('.paralax');
-  
+  let assPos = event.detail;
+
   items.forEach((item, index) => {
     window.requestAnimationFrame(function () {
       switch (speeds[index]) {
         case 'fast':
-          item.style.transform = `translateY(-${window.pageYOffset * 2}px)`;
-          item.style.transform = `translateY(-${window.pageYOffset * 2}px)`;
+          item.style.transform = `translateY(-${assPos * 2}px)`;
           break
         case 'normal':
-          item.style.transform = `translateY(-${window.pageYOffset}px)`;
+          item.style.transform = `translateY(-${assPos}px)`;
           break
         case 'slow':
-          item.style.transform = `translateY(-${window.pageYOffset / 2}px)`;
+          item.style.transform = `translateY(-${assPos / 2}px)`;
           break
       }
     });
@@ -42,13 +43,13 @@ Vue.directive('paralax', {
     }
 
     if (count === 0) {
-      window.addEventListener('scroll', paralax, bindings)
+      window.addEventListener('assCroll', paralax, bindings);
       count++
     }
     el.classList.add('paralax')
   },
   unbind: el => {
     count = 0
-    window.removeEventListener('scroll', paralax)
+    window.removeEventListener('assCroll', paralax)
   }
 })

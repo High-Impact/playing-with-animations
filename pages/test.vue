@@ -4,6 +4,7 @@
         <nuxt-link to="/">
             <p>Home</p>
         </nuxt-link>
+        <a href="/">A Tag</a>
         <section style="height:200vh;"/>
     </section>
 </template>

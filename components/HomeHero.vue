@@ -8,6 +8,7 @@
                     ACCURATE
                     SAFE
                 </h1>
+                <a id="testing">hello</a>
                 <p>Serving studio production for over three years. RABS is trusted by Assistant Directors, Accounting, Casting, and Other Crew to safely and efficiently manage background and production’s needs. </p>
                 <nuxt-link to="/test">
                     <Button>REQUEST A DEMO</Button>
@@ -27,7 +28,7 @@
 <style lang="scss">
 .home-hero {
     position: relative;
-    // z-index: 2;
+    z-index: 2;
     .content-container {
         position:relative;
         max-width:75ch;

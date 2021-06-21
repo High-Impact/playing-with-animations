@@ -12,28 +12,33 @@ export default {
   },
   methods: {
     flotingMousePoint(event) {
+
         let floatingMouse = document.getElementById('floatingMouse');
       
         if (event.type == 'mousemove') {
-            this.lastY = event.clientY
-            this.lastX = event.clientX
+            this.lastY = event.pageY
+            this.lastX = event.pageX
         }
 
-        // window.requestAnimationFrame( () => {
-            floatingMouse.style.top = `${this.lastY + window.scrollY}px`;
+        window.requestAnimationFrame( () => {
+            // floatingMouse.style.top = `${this.lastY + window.scrollY}px`;
+            floatingMouse.style.top = `${this.lastY}px`;
             floatingMouse.style.left = `${this.lastX}px`;
-        // })
+        })
     }
   },
   mounted() {
+    // elementList = parentNode.querySelectorAll(selectors);
+    document.querySelectorAll('a').forEach((item) => {
+      item.onmouseover = function () {
+          window.ev = true;
+          console.log(window.ev);
+      }
+    });
     window.addEventListener('mousemove', this.flotingMousePoint)
-    // window.addEventListener('scroll', this.flotingMousePoint)
-    // console.log('mounted')
   },
   beforeDestroy() {
     window.removeEventListener('mousemove', this.flotingMousePoint)
-    // window.removeEventListener('scroll', this.flotingMousePoint)
-    // console.log('destoryed')
 
   }  
 }
@@ -48,8 +53,8 @@ export default {
     z-index: 1;
     border:1px solid black;
     border-radius: 50%;
-    transition:500ms ease-out;
-    transform:scale(.5) translate(-5em,-5em);
+    transition:250ms ease-out;
+    transform:scale(.25) translate(-10em,-10em);
     user-select: none;
     pointer-events: none;
     &:hover {

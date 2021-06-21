@@ -4,7 +4,7 @@
             <img src="/logo.png" alt="RABS logo">
         </nuxt-link>
         <section class="navigation-container">
-            <Button>Request a demo</Button>
+                <Button>Request a demo</Button>
             <button @click="menu = !menu" class="hamburger hamburger--collapse" :class="{'is-active':menu}" type="button">
                 <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
